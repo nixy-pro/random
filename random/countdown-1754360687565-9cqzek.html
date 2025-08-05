@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head><meta charset="UTF-8" /><title>Countdown</title></head>
+<body style="background:#000;color:#facc15;font-family:sans-serif;text-align:center;padding:2rem;">
+  <h2>Countdown Timer</h2>
+  <div id="countdown" style="font-size:2rem;margin-top:1rem;">Loading...</div>
+  <script>
+    const target = new Date("2025-08-07T02:24:00.000Z").getTime();
+    const countdown = () => {
+      const now = new Date().getTime();
+      const diff = target - now;
+      if(diff <= 0) {
+        document.getElementById('countdown').textContent = 'Waktu Habis!';
+        clearInterval(timer);
+        return;
+      }
+      const d = Math.floor(diff / (1000*60*60*24));
+      const h = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
+      const m = Math.floor((diff % (1000*60*60)) / (1000*60));
+      const s = Math.floor((diff % (1000*60)) / 1000);
+      document.getElementById('countdown').textContent = d + ' hari ' + h + ' jam ' + m + ' menit ' + s + ' detik';
+    }
+    countdown();
+    const timer = setInterval(countdown, 1000);
+  </script>
+</body>
+</html>
