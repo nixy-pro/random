@@ -1,0 +1,9 @@
+ssh-mm2-ws.sshws.net
+fastssh.com-sgdo009k
+123
+
+
+app.gopay.co.id:80
+
+
+GET / HTTP/1.1[crlf]Host: bimbel.ruangguru.com[crlf][crlf]PATCH / HTTP/1.1[crlf]Host: [host][crlf]Upgrade: websocket[crlf][crlf][split]HTTP/ 69[crlf][crlf]
