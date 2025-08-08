@@ -1,0 +1,105 @@
+:root{
+  --blue-600:#1976D2;
+  --blue-700:#1565C0;
+  --bg:#0b1220;
+  --panel:#0f1724;
+  --muted:#bfcfdc;
+}
+
+*{box-sizing:border-box}
+html,body,#app{height:100%}
+body{
+  margin:0;
+  font-family:Inter, "Segoe UI", Roboto, Arial, sans-serif;
+  background:linear-gradient(180deg,#041427 0%,#07182b 100%);
+  color:#fff;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+/* Header */
+.header{
+  display:flex;
+  gap:16px;
+  align-items:center;
+  padding:18px;
+  background:linear-gradient(90deg,var(--blue-600),var(--blue-700));
+  box-shadow:0 2px 10px rgba(0,0,0,.35);
+}
+.logo{
+  width:56px;
+  height:56px;
+  border-radius:12px;
+  object-fit:cover;
+  border:2px solid rgba(255,255,255,0.08);
+}
+.title h1{
+  margin:0;
+  font-size:1.25rem;
+  letter-spacing:.5px;
+}
+.subtitle{margin:2px 0 0;font-size:.85rem;color:rgba(255,255,255,0.9)}
+
+/* Install button */
+.install-btn{
+  margin-left:auto;
+  background:rgba(0,0,0,0.12);
+  border:1px solid rgba(255,255,255,0.06);
+  color:#fff;
+  padding:10px 12px;
+  border-radius:8px;
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  cursor:pointer;
+  font-weight:600;
+  transition:transform .12s ease, background .12s;
+}
+.install-btn:active{transform:translateY(1px)}
+.install-btn .btn-text{font-size:.95rem}
+
+/* Grid layout */
+.grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fit,minmax(180px,1fr));
+  gap:18px;
+  padding:20px;
+  max-width:1100px;
+  margin:18px auto;
+}
+.card{
+  background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border:1px solid rgba(255,255,255,0.03);
+  padding:20px;
+  border-radius:12px;
+  text-align:center;
+  text-decoration:none;
+  color:inherit;
+  transition:transform .18s cubic-bezier(.2,.9,.2,1), box-shadow .18s;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  align-items:center;
+  justify-content:center;
+  min-height:140px;
+}
+.card i{font-size:28px;color:var(--blue-600)}
+.card-title{font-weight:700;font-size:1rem}
+.card:hover{transform:translateY(-8px);box-shadow:0 16px 32px rgba(4,12,24,.6)}
+
+/* Footer */
+.footer{
+  text-align:center;
+  padding:18px;
+  color:var(--muted);
+  font-size:.9rem;
+  border-top:1px solid rgba(255,255,255,0.02);
+}
+
+/* Responsive tweaks */
+@media (max-width:420px){
+  .header{padding:12px}
+  .install-btn{padding:8px 10px;font-size:.9rem}
+  .logo{width:48px;height:48px}
+  .grid{gap:12px;padding:12px}
+}
