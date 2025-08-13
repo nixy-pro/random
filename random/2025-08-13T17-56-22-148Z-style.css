@@ -1,0 +1,271 @@
+:root {
+    --nixy-blue: #0d6efd; 
+    --nixy-green: #28a745; 
+    --nixy-orange: #fd7e14; 
+    --nixy-red: #dc3545;
+    --nixy-light-border: #e9ecef; 
+    --nixy-light-text: #6c757d; 
+    --nixy-active-blue: #0d6efd;
+}
+
+#download-widget-nixy {
+    font-family: 'Poppins', sans-serif; 
+    box-sizing: border-box; 
+    max-width: 450px;
+    margin: 20px auto; 
+    background-color: transparent;
+}
+
+#download-widget-nixy *, 
+#download-widget-nixy *::before, 
+#download-widget-nixy *::after { 
+    box-sizing: border-box; 
+}
+
+#download-widget-nixy .nixy-tab-switcher {
+    position: relative; 
+    display: flex; 
+    background-color: var(--nixy-light-border);
+    border-radius: 12px; 
+    padding: 4px; 
+    margin-bottom: 25px;
+}
+
+#download-widget-nixy .nixy-glider {
+    position: absolute; 
+    height: calc(100% - 8px); 
+    width: 50%; 
+    background-color: var(--nixy-active-blue);
+    border-radius: 10px; 
+    transition: transform 0.3s cubic-bezier(0.45, 0.05, 0.55, 0.95); 
+    z-index: 1;
+}
+
+#download-widget-nixy .nixy-tab-btn {
+    flex: 1; 
+    padding: 8px 15px; 
+    background-color: transparent; 
+    border: none; 
+    color: var(--nixy-light-text);
+    font-family: 'Poppins', sans-serif; 
+    font-weight: 600; 
+    font-size: 14px; 
+    cursor: pointer;
+    position: relative; 
+    z-index: 2; 
+    transition: color 0.3s ease; 
+    -webkit-tap-highlight-color: transparent;
+}
+
+#download-widget-nixy .nixy-tab-btn:focus { 
+    outline: none; 
+}
+
+#download-widget-nixy .nixy-tab-btn.active { 
+    color: white; 
+}
+
+#download-widget-nixy .lang-en { display: none; }
+#download-widget-nixy.show-en .lang-id { display: none; }
+#download-widget-nixy.show-en .lang-en { display: inline; }
+
+#download-widget-nixy .nixy-container { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 20px; 
+    width: 100%; 
+}
+
+#download-widget-nixy .nixy-action-btn {
+    position: relative; 
+    overflow: hidden; 
+    display: flex; 
+    align-items: center; 
+    padding: 20px;
+    border-radius: 16px; 
+    text-decoration: none !important; 
+    color: white !important;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px -2px rgba(0, 0, 0, 0.1), 0 2px 8px -1px rgba(0, 0, 0, 0.08);
+    border: none; 
+    -webkit-tap-highlight-color: transparent;
+}
+
+#download-widget-nixy .nixy-action-btn:focus, 
+#download-widget-nixy .nixy-action-btn:active { 
+    outline: none; 
+}
+
+#download-widget-nixy .nixy-action-btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px -3px rgba(0, 0, 0, 0.15), 0 4px 10px -2px rgba(0, 0, 0, 0.1);
+    color: white !important; 
+    will-change: transform, box-shadow;
+}
+
+.nixy-ripple {
+    position: absolute; 
+    border-radius: 50%; 
+    background-color: rgba(255, 255, 255, 0.6);
+    transform: scale(0); 
+    animation: nixy-ripple-effect 0.6s linear; 
+    pointer-events: none;
+}
+
+@keyframes nixy-ripple-effect { to { transform: scale(4); opacity: 0; } }
+
+#download-widget-nixy .nixy-icon { 
+    font-size: 28px; 
+    margin-right: 20px; 
+    width: 30px; 
+    text-align: center; 
+}
+
+#download-widget-nixy .nixy-text-wrapper { flex-grow: 1; }
+#download-widget-nixy .nixy-main-text { display: block; font-weight: 700; font-size: 16px; text-transform: uppercase; }
+#download-widget-nixy .nixy-sub-text { display: block; font-size: 14px; font-weight: 400; opacity: 0.9; }
+
+#download-widget-nixy .nixy-btn-download { background-color: var(--nixy-blue); }
+#download-widget-nixy .nixy-btn-tutorial1 { background-color: var(--nixy-green); }
+#download-widget-nixy .nixy-btn-tutorial2 { background-color: var(--nixy-orange); }
+#download-widget-nixy .nixy-btn-donasi { background-color: var(--nixy-red); }
+
+/* --- Gaya Pop-up Umum --- */
+#download-widget-nixy .nixy-videoPopup, 
+#download-widget-nixy .nixy-donationPopup {
+    display: none; 
+    position: fixed; 
+    z-index: 99999; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); 
+    backdrop-filter: blur(10px); 
+    -webkit-backdrop-filter: blur(10px);
+    justify-content: center; 
+    align-items: center; 
+    animation: nixy-fadeIn 0.3s ease-in-out;
+    padding: 20px;
+}
+
+#download-widget-nixy .nixy-videoPopup.active, 
+#download-widget-nixy .nixy-donationPopup.active { 
+    display: flex; 
+}
+
+#download-widget-nixy .nixy-popup-container {
+    position: relative; 
+    width: 100%;
+    max-width: 800px;
+    animation: nixy-popupScale 0.35s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+    display: flex; 
+    flex-direction: column; 
+    align-items: center;
+}
+
+#download-widget-nixy .nixy-popupVideo {
+    width: 100%; 
+    border-radius: 5px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2); 
+    background: #000;
+}
+
+#download-widget-nixy .nixy-close-icon, 
+#download-widget-nixy .nixy-close-donation-icon {
+    position: static; 
+    margin-top: 20px; 
+    width: auto; 
+    padding: 8px 25px; 
+    background: #f1f1f1;
+    color: #333; 
+    border: 1px solid #ddd; 
+    border-radius: 50px; 
+    font-size: 18px; 
+    font-weight: 600;
+    cursor: pointer; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    transition: all 0.2s ease;
+}
+
+#download-widget-nixy .nixy-close-icon:hover, 
+#download-widget-nixy .nixy-close-donation-icon:hover {
+    transform: scale(1.05); 
+    background-color: var(--nixy-red); 
+    color: white; 
+    border-color: var(--nixy-red);
+}
+
+/* --- Gaya Pop-up Donasi Khusus --- */
+#download-widget-nixy .nixy-donation-content {
+    background: white; 
+    color: #333; 
+    padding: 25px;
+    border-radius: 16px;
+    width: 100%; 
+    max-width: 420px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+#download-widget-nixy .nixy-donation-title {
+    margin: 0;
+    font-size: 20px;
+    text-transform: uppercase;
+    color: var(--nixy-red);
+    font-weight: bold;
+    text-align: center;
+}
+
+#download-widget-nixy .nixy-donation-text {
+    margin: 15px 0 5px 2px;
+    font-size: 13px;
+    text-align: left;
+    color: var(--nixy-light-text);
+}
+
+#download-widget-nixy .nixy-donation-address {
+    display: flex;
+    align-items: stretch;
+}
+
+#download-widget-nixy #nixy-donation-input {
+    flex-grow: 1; 
+    padding: 10px 12px; 
+    font-size: 14px;
+    border: 2px solid var(--nixy-light-border); 
+    border-radius: 8px 0 0 8px;
+    background-color: #f8f9fa; 
+    color: #495057; 
+    outline: none;
+    white-space: nowrap; 
+    overflow: hidden; 
+    text-overflow: ellipsis;
+    min-width: 0;
+}
+
+#download-widget-nixy #nixy-copy-btn {
+    flex-shrink: 0; 
+    padding: 10px 15px; 
+    border: 2px solid var(--nixy-light-border);
+    background: #e9ecef; 
+    border-left: none; 
+    border-radius: 0 8px 8px 0;
+    cursor: pointer; 
+    font-size: 18px; 
+    color: var(--nixy-light-text); 
+    transition: all 0.2s ease;
+}
+
+#download-widget-nixy #nixy-copy-btn:hover { 
+    background: var(--nixy-green); 
+    color: white; 
+}
+
+#download-widget-nixy #nixy-copy-feedback { 
+    text-align: center; 
+}
+
+@keyframes nixy-fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes nixy-popupScale { from { transform: scale(0.8); opacity: 0; } to { transform: scale(1); opacity: 1; } }
